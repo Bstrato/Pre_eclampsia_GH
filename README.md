@@ -23,9 +23,9 @@ Preeclampsia affects 2-8% of pregnancies worldwide and is a leading cause of mat
 - Data Shuffling: Ensures randomization for better model training
 
 **Resampling Techniques**
--SMOTE (Synthetic Minority Over-sampling Technique): Generates synthetic examples for minority class
--Random Over Sampler: Duplicates minority class samples randomly
--Random Under Sampler: Reduces majority class samples randomly
+- SMOTE (Synthetic Minority Over-sampling Technique): Generates synthetic examples for minority class
+- Random Over Sampler: Duplicates minority class samples randomly
+- Random Under Sampler: Reduces majority class samples randomly
 
 **Classification Models**
 - Logistic Regression: Linear baseline model
