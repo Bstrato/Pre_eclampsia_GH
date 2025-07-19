@@ -1,5 +1,3 @@
-# classification_pipeline.py
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -55,20 +53,15 @@ def plot_post_balance(y_resampled, labels, sampler_name):
     plt.savefig(filename)
     plt.close()
 
-
+# Function for Data loadingm shuffling and handling missing data
 def main():
-    # === LOAD DATA ===
     file_path = "Dataset_V1.csv"
     if not os.path.exists(file_path):
         print(f"ERROR: File {file_path} not found.")
         return
 
     df = pd.read_csv(file_path)
-
-    # === SHUFFLE DATA ===
     df = df.sample(frac=1.0, random_state=42).reset_index(drop=True)
-
-    # === HANDLE MISSING DATA ===
     cat_cols = df.select_dtypes(include='object').columns
     num_cols = df.select_dtypes(include=['int64', 'float64']).columns.drop('S/N', errors='ignore')
 
@@ -78,13 +71,12 @@ def main():
     df[cat_cols] = imputer_mode.fit_transform(df[cat_cols])
     df[num_cols] = imputer_mean.fit_transform(df[num_cols])
 
-    # === ENCODE TARGET ===
     target = 'Principal Diagnosis'
     le = LabelEncoder()
     df[target] = le.fit_transform(df[target])
     class_labels = le.classes_
 
-    # === FEATURE ENGINEERING ===
+    #Feature Engineering
     df_encoded = pd.get_dummies(df.drop(columns=['S/N']), drop_first=True)
     corr = df_encoded.corr()
 
@@ -95,13 +87,13 @@ def main():
     plt.savefig("heatmap.png")
     plt.close()
 
-    # === FEATURE SELECTION ===
+    # Feature selection
     target_corr = corr[target].abs().sort_values(ascending=False)
     selected_features = target_corr[target_corr > 0.05].index.drop(target)
     X = df_encoded[selected_features]
     y = df_encoded[target]
 
-    # === CLASS DISTRIBUTION BEFORE BALANCE ===
+    #Class distribution of balance
     class_counts = y.value_counts()
     plt.figure(figsize=(6, 4))
     sns.barplot(x=class_counts.index, y=class_counts.values)
@@ -113,7 +105,7 @@ def main():
     plt.savefig("class_distribution_before.png")
     plt.close()
 
-    # === MODEL EVALUATION ===
+    #Function for evaluation
     def evaluate_models(X, y, sampler, sampler_name):
         X_res, y_res = sampler.fit_resample(X, y)
 
@@ -156,7 +148,7 @@ def main():
             })
         return results
 
-    # === SAMPLERS ===
+  
     samplers = {
         "SMOTE": SMOTE(random_state=42),
         "RandomOverSampler": RandomOverSampler(random_state=42),
