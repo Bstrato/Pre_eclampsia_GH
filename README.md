@@ -28,25 +28,25 @@ Data Processing Steps:
 -Random Under Sampler: Reduces majority class samples randomly
 
 **Classification Models**
--Logistic Regression: Linear baseline model
--Random Forest: Ensemble tree-based method
--Support Vector Machine (SVM): Kernel-based classification
--K-Nearest Neighbors (KNN): Instance-based learning
--Gradient Boosting: Sequential ensemble method
+- Logistic Regression: Linear baseline model
+- Random Forest: Ensemble tree-based method
+- Support Vector Machine (SVM): Kernel-based classification
+- K-Nearest Neighbors (KNN): Instance-based learning
+- Gradient Boosting: Sequential ensemble method
 
 **Evaluation Metrics**
--Accuracy: Overall correctness of predictions
--Precision: Positive predictive value
--Recall (Sensitivity): True positive rate
--F1-Score: Harmonic mean of precision and recall
--ROC-AUC: Area under the receiver operating characteristic curve
+- Accuracy: Overall correctness of predictions
+- Precision: Positive predictive value
+- Recall (Sensitivity): True positive rate
+- F1-Score: Harmonic mean of precision and recall
+- ROC-AUC: Area under the receiver operating characteristic curve
 
 **Core Libraries**
--pandas: Data manipulation and analysis
--numpy: Numerical computations
--scikit-learn: Machine learning algorithms and utilities
--imbalanced-learn: Specialized library for handling imbalanced datasets
+- pandas: Data manipulation and analysis
+- numpy: Numerical computations
+- scikit-learn: Machine learning algorithms and utilities
+- imbalanced-learn: Specialized library for handling imbalanced datasets
 
 **Visualization**
--matplotlib: Static plotting
--seaborn: Statistical data visualization
+- matplotlib: Static plotting
+- seaborn: Statistical data visualization
