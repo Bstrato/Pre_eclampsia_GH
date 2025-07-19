@@ -1,4 +1,4 @@
-**Preeclampsia Prediction Using Machine Learning: Addressing Class Imbalance **
+**Preeclampsia Prediction Using Machine Learning: Addressing Class Imbalance**
 
 This project develops a machine learning pipeline to predict the presence of preeclampsia in pregnant women using clinical data. Preeclampsia is a serious pregnancy complication characterized by high blood pressure and protein in urine, making early detection crucial for maternal and fetal health. The project addresses the inherent class imbalance problem commonly found in medical datasets through comprehensive sampling techniques and multi-model evaluation.
 
