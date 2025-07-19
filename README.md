@@ -14,13 +14,13 @@ Preeclampsia affects 2-8% of pregnancies worldwide and is a leading cause of mat
 - Robust Metrics: Evaluates models using accuracy, precision, recall, F1-score, and ROC-AUC
 
 **Dataset**
-The project uses Dataset_V1.csv containing clinical features related to pregnancy complications. The target variable is "Principal Diagnosis" with binary classification (preeclampsia vs. normal).
-Data Processing Steps:
-
--Missing Value Imputation: Mode for categorical variables, mean for numerical variables
--Feature Engineering: One-hot encoding for categorical variables
--Feature Selection: Correlation-based selection (threshold > 0.05)
--Data Shuffling: Ensures randomization for better model training
+- The project uses Dataset_V1.csv containing clinical features related to pregnancy complications. The target variable is "Principal Diagnosis" with binary classification (preeclampsia vs. normal).
+  
+**Data Processing Steps**
+- Missing Value Imputation: Mode for categorical variables, mean for numerical variables
+- Feature Engineering: One-hot encoding for categorical variables
+- Feature Selection: Correlation-based selection (threshold > 0.05)
+- Data Shuffling: Ensures randomization for better model training
 
 **Resampling Techniques**
 -SMOTE (Synthetic Minority Over-sampling Technique): Generates synthetic examples for minority class
